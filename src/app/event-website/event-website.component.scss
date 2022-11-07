@@ -38,7 +38,7 @@
     }
 
     &:last-child {
-      box-shadow: 8px 8px 0 2px rgba(0, 0, 0, 1);
+      box-shadow: 8px 8px 0 2px $black;
       border: 4px solid #000
     }
   }
