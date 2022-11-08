@@ -25,16 +25,64 @@ export class EventWebsiteComponent implements OnInit {
 
   ngOnInit(): void {
     gsap.registerPlugin(ScrollTrigger);
-    this.ScrollAnimations();
+    this.bannerAnimation();
   }
 
-  ScrollAnimations() {
-    gsap.to('.box', {
-      x: 500,
+  bannerAnimation() {
+    gsap.to('.banner-img-1', {
+      duration: 0.5,
+      x: 390,
+      ease: "back",
       scrollTrigger: {
         trigger: document.body,
-        start: 'top top',
-        end: '+=300',
+        start: '100px 100px',
+        end: '+=10',
+        scrub: 1,
+      },
+    });
+
+    gsap.to('.banner-img-2', {
+      duration: 0.5,
+      x: -390,
+      ease: "back",
+      scrollTrigger: {
+        trigger: document.body,
+        start: '110px 100px',
+        end: '+=10',
+        scrub: 1,
+      },
+    });
+
+    gsap.to('.banner-img-3', {
+      duration: 0.5,
+      x: 420,
+      ease: "back",
+      scrollTrigger: {
+        trigger: document.body,
+        start: '120px 100px',
+        end: '+=10',
+        scrub: 1,
+      },
+    });
+
+    gsap.to('.banner-img-4', {
+      duration: 0.5,
+      x: -420,
+      ease: "back",
+      scrollTrigger: {
+        trigger: document.body,
+        start: '130px 100px',
+        end: '+=10',
+        scrub: 1,
+      },
+    });
+
+    gsap.to('.banner-img-5', {
+      yPercent: 220,
+      scrollTrigger: {
+        trigger: document.body,
+        start: '140px 100px',
+        end: '+=10',
         scrub: 1,
       },
     });
