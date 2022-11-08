@@ -56,14 +56,14 @@
   .banner-img-1 {
     width: 39%;
     position: absolute;
-    left: -200px;
+    left: -100%;
     top: 0;
   }
 
   .banner-img-2 {
     width: 43%;
     position: absolute;
-    right: -200px;
+    right: -100%;
     top:0;
   }
 
@@ -71,14 +71,14 @@
     width: 43%;
     position: absolute;
     top: 450px;
-    left: -200px;
+    left: -100%;
 
   }
 
   .banner-img-4 {
     width: 36%;
     position: absolute;
-    right: -200px;
+    right: -100%;
     top: 450px;
   }
 
@@ -119,14 +119,14 @@
 
   .description {
     position: absolute;
-    top: 150px;
+    top: 100px;
     left: 20%;
     font-size: 30px;
 
   }
   .description-img-1 {
     position: absolute;
-    left: 30%;
+    left: 24%;
     top: 250px;
     width: 30%;
     img{
@@ -149,7 +149,7 @@
   .description-img-3 {
     position: absolute;
     width: 35%;
-    left: 25%;
+    left: 16%;
     top: 650px;
     img{
       width: 100%;

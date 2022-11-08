@@ -31,8 +31,8 @@ export class EventWebsiteComponent implements OnInit {
   bannerAnimation() {
     gsap.to('.banner-img-1', {
       duration: 0.5,
-      x: 390,
-      ease: "back",
+      ease: "back.out(0.5)",
+      xPercent: 280,
       scrollTrigger: {
         trigger: document.body,
         start: '100px 100px',
@@ -43,8 +43,9 @@ export class EventWebsiteComponent implements OnInit {
 
     gsap.to('.banner-img-2', {
       duration: 0.5,
-      x: -390,
-      ease: "back",
+      ease: "back.out(0.5)",
+      xPercent: -260,
+
       scrollTrigger: {
         trigger: document.body,
         start: '110px 100px',
@@ -55,8 +56,8 @@ export class EventWebsiteComponent implements OnInit {
 
     gsap.to('.banner-img-3', {
       duration: 0.5,
-      x: 420,
-      ease: "back",
+      ease: "back.out(0.5)",
+      xPercent: 255,
       scrollTrigger: {
         trigger: document.body,
         start: '120px 100px',
@@ -66,9 +67,9 @@ export class EventWebsiteComponent implements OnInit {
     });
 
     gsap.to('.banner-img-4', {
+      xPercent: -320,
       duration: 0.5,
-      x: -420,
-      ease: "back",
+      ease: "back.out(0.5)",
       scrollTrigger: {
         trigger: document.body,
         start: '130px 100px',
