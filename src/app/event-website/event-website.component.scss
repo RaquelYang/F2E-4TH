@@ -122,13 +122,15 @@
     top: 100px;
     left: 20%;
     font-size: 30px;
-
+    opacity: 0;
   }
+
   .description-img-1 {
     position: absolute;
     left: 24%;
     top: 250px;
     width: 30%;
+    opacity: 0;
     img{
       width: 100%;
     }
@@ -140,6 +142,7 @@
     width: 30%;
     right: 10%;
     top: 450px;
+    opacity: 0;
     img{
       width: 100%;
     }
@@ -151,6 +154,7 @@
     width: 35%;
     left: 16%;
     top: 650px;
+    opacity: 0;
     img{
       width: 100%;
     }

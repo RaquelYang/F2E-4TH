@@ -26,6 +26,7 @@ export class EventWebsiteComponent implements OnInit {
   ngOnInit(): void {
     gsap.registerPlugin(ScrollTrigger);
     this.bannerAnimation();
+    this.descriptionAnimation();
   }
 
   bannerAnimation() {
@@ -84,6 +85,52 @@ export class EventWebsiteComponent implements OnInit {
         trigger: document.body,
         start: '140px 100px',
         end: '+=10',
+        scrub: 1,
+      },
+    });
+  }
+
+  descriptionAnimation() {
+    gsap.to('.description', {
+      opacity: 1,
+      y: 50,
+      scrollTrigger: {
+        trigger: ".section2-description",
+        start: '60px 100px',
+        end: '+=40',
+        scrub: 1,
+      },
+    });
+
+    gsap.to('.description-img-1', {
+      opacity: 1,
+      y: 50,
+      scrollTrigger: {
+        trigger: ".section2-description",
+        start: '80px 100px',
+        end: '+=40',
+        scrub: 1,
+      },
+    });
+
+    gsap.to('.description-img-2', {
+      opacity: 1,
+      y: 50,
+      scrollTrigger: {
+        trigger: ".section2-description",
+        start: '100px 100px',
+        end: '+=40',
+        scrub: 1,
+      },
+    });
+
+    gsap.to('.description-img-3', {
+      opacity: 1,
+      y: 50,
+      scrollTrigger: {
+        trigger: ".section2-description",
+        start: '120px 100px',
+        end: '+=40',
         scrub: 1,
       },
     });
