@@ -97,24 +97,8 @@
 }
 
 .section2-description {
-  height: 120vh;
-  background-image: url('../../assets/images/Background.png');
-  background-repeat: no-repeat;
-  background-size: 108%;
-  background-position: bottom;
-}
-
-.section3-banner2 {
-  height: 120vh;
-  background-image: url('../../assets/images/Background.png');
-  background-repeat: no-repeat;
-  background-size: 108%;
-  background-position: -21px bottom;
-  transform: scale(-1, -1);
-}
-
-.section2-description {
   position: relative;
+  height: 100vh;
 
   .description {
     position: absolute;
@@ -178,4 +162,81 @@
     left: 24%;
     top: 27%;
   }
+}
+
+
+
+.section3-banner2 {
+  position: absolute;
+  top: 700px;
+
+
+  .section3-banner2-img-1 {
+    position: absolute;
+    top: -250px;
+    left: -55%;
+    img {
+      width: 60%;
+    }
+  }
+  .section3-banner2-img-2 {
+    position: absolute;
+    top: -250px;
+    right: -100%;
+    img {
+      width: 60%;
+    }
+  }
+
+  .section3-banner2-img-3 {
+    position: relative;
+    margin-top: 50px;
+    top: -100vh;
+    display: none;
+    img {
+      width: 100%;
+    }
+
+    img:last-child {
+      position: absolute;
+      width: 25%;
+      top: -400px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+  }
+}
+
+.h-100vh {
+  height: 100vh;
+}
+.relative {
+  position: relative;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.dot {
+  height: 400px;
+  width: 100%;
+  background-image: url('../../assets/images/Background.png');
+  background-repeat: no-repeat;
+  background-size: 108%;
+  background-position: bottom;
+  position: absolute;
+  bottom: 0px;
+}
+
+.dot-reverse {
+  height: 400px;
+  width: 100%;
+  background-image: url('../../assets/images/Background.png');
+  background-repeat: no-repeat;
+  background-size: 108%;
+  background-position: -21px bottom;
+  transform: scale(-1, -1);
+  position: absolute;
 }
