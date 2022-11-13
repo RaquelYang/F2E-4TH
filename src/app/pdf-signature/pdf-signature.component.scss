@@ -2,7 +2,6 @@
 
 .navbar-container {
   background-color: $sign-light-main;
-
 }
 .navbar {
   display: flex;
@@ -10,6 +9,10 @@
   max-width: 1440px;
   margin: auto;
   padding: 20px 0;
+}
+
+.logo {
+  width: 100px;
 }
 
 .link ul{
@@ -32,4 +35,73 @@ li{
 a {
   color: $sign-secondary;
   text-decoration: none;
+}
+
+.content {
+  height: calc(100vh - 70px);
+  background-color: $sign-mid-grey;
+  position: relative;
+
+  img {
+    position: absolute;
+  }
+
+  .person {
+    height: 800px;
+  }
+
+  .block-brown {
+    width: 200px;
+    top: 300px;
+    left: 50px;
+  }
+
+  .block-brown2 {
+    width: 100px;
+    top: 250px;
+    right: 50px;
+  }
+
+  .block-blue {
+    height: calc(100vh - 70px);
+    width: 1600px;
+    right: 0;
+  }
+
+  .shadow {
+    width: 450px;
+    bottom: 0;
+    left: 483px;
+    transform: rotate(-2deg);
+  }
+
+  .signature {
+    position: absolute;
+    right: 400px;
+    top: 180px;
+
+    img {
+      width: 400px;
+      position: relative;
+    }
+
+    p {
+      color: $sign-secondary;
+      font-size: $headline1;
+      letter-spacing: 18px;
+      padding-top: 20px;
+    }
+
+    button {
+      margin-top: 70px;
+      padding: 20px 0;
+      letter-spacing: 18px;
+      font-size: $headline1;
+      background: $sign-light-main;
+      border: none;
+      width: 100%;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      cursor: pointer;
+    }
+  }
 }
