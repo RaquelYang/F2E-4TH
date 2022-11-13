@@ -1,1 +1,20 @@
-<p>pdf-signature works!</p>
+<div class="pdf-signature">
+  <div class="navbar-container">
+    <nav class="navbar">
+      <div>
+        logo
+      </div>
+      <div class="link">
+        <ul>
+          <li *ngFor="let link of links">
+            <a href="{{ link.navigate }}" [ngClass]="{'disable': link.disable}">{{ link.name }}</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+  <div class="content">
+
+  </div>
+</div>
