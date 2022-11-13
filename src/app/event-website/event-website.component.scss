@@ -227,7 +227,7 @@
   background-size: 108%;
   background-position: bottom;
   position: absolute;
-  bottom: 0px;
+  bottom: -100px;
 }
 
 .dot-reverse {
@@ -239,4 +239,5 @@
   background-position: -21px bottom;
   transform: scale(-1, -1);
   position: absolute;
+  top:100px
 }
