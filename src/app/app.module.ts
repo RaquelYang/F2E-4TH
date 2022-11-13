@@ -4,11 +4,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { EventWebsiteComponent } from './event-website/event-website.component';
+import { PdfSignatureComponent } from './pdf-signature/pdf-signature.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    EventWebsiteComponent
+    EventWebsiteComponent,
+    PdfSignatureComponent
   ],
   imports: [
     BrowserModule,
