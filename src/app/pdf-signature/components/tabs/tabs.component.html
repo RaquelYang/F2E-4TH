@@ -1,0 +1,28 @@
+
+<div class="container">
+  <div class="wrap">
+      <div class="tabs">
+      <div class="active" (click)="tab = 1">上傳新文件</div>
+      <div class="" (click)="tab = 2">選擇已上傳文件</div>
+    </div>
+    <div class="content">
+      <div class="tab tab1" *ngIf="tab === 1">
+        <div>
+          <span>點擊此處</span><span class="px-15">或</span><span>直接拖曳檔案</span>
+        </div>
+        <div>
+          <img src="assets/images/pdf-signature/carbon_document-pdf.png" alt="PDF-icon">
+        </div>
+        <div>
+          <span>(限10MB以下PDF檔)</span>
+        </div>
+      </div>
+      <div class="tab" *ngIf="tab === 2">
+        content2
+      </div>
+    </div>
+  </div>
+
+</div>
+
+

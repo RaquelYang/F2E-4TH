@@ -7,6 +7,7 @@ import { EventWebsiteComponent } from './event-website/event-website.component';
 import { PdfSignatureComponent } from './pdf-signature/pdf-signature.component';
 import { PdfSignatureUploadComponent } from './pdf-signature/pdf-signature-upload/pdf-signature-upload.component';
 import { ProgressBarComponent } from './pdf-signature/components/progress-bar/progress-bar.component';
+import { TabsComponent } from './pdf-signature/components/tabs/tabs.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { ProgressBarComponent } from './pdf-signature/components/progress-bar/pr
     EventWebsiteComponent,
     PdfSignatureComponent,
     PdfSignatureUploadComponent,
-    ProgressBarComponent
+    ProgressBarComponent,
+    TabsComponent
   ],
   imports: [
     BrowserModule,

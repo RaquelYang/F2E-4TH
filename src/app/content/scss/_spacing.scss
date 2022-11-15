@@ -1,0 +1,5 @@
+@for $size from 1 through 30 {
+  .px-#{$size} {
+    padding: 0 $size * 1px;
+  }
+}
