@@ -1,0 +1,85 @@
+@import '../../../content/scss/variable';
+
+.progress-bar {
+  height: 100px;
+  background-color: $sign-light-main;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+
+  max-width: 1440px;
+  height: 100%;
+
+  @media #{$table} {
+    width: 1000px;
+  }
+}
+
+.text {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+  font-size: $headline5;
+  width: 400px;
+  color: $sign-dark-grey;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    background-color: $white;
+    box-shadow: 0px 4px 4px $sign-mid-grey;
+    width: 362px;
+    height: 10px;
+    top: 55px;
+    left: 18px;
+  }
+
+  div {
+    position: relative;
+
+    &::before {
+      content: '';
+      width: 20px;
+      height: 20px;
+      background-color: $white;
+      position: absolute;
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      box-shadow: 0px 4px 4px $sign-mid-grey;
+    }
+  }
+
+}
+
+.text .active {
+  &::after {
+    content: '';
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: $sign-primary;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.active {
+  color: $sign-primary;
+}
+
+.btn-group {
+  display: flex;
+  align-items: center;
+
+  button {
+    margin: 0px 15px;
+  }
+}

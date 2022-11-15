@@ -1,0 +1,21 @@
+.btn {
+  width: 180px;
+  height: 60px;
+  border-radius: 30px;
+  box-shadow: 0px 4px 4px $sign-mid-grey;
+  margin: auto;
+  border: none;
+  font-size: $headline2;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+
+.btn-primary {
+  color: $white;
+  background-color: $sign-secondary;
+}
+
+.btn-secondary {
+  color: $sign-secondary;
+  background-color: $white;
+}
