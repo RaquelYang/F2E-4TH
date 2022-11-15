@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { EventWebsiteComponent } from './event-website/event-website.component';
 import { PdfSignatureComponent } from './pdf-signature/pdf-signature.component';
+import { PdfSignatureUploadComponent } from './pdf-signature/pdf-signature-upload/pdf-signature-upload.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     EventWebsiteComponent,
-    PdfSignatureComponent
+    PdfSignatureComponent,
+    PdfSignatureUploadComponent
   ],
   imports: [
     BrowserModule,

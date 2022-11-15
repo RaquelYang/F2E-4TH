@@ -1,0 +1,27 @@
+<div class="pdf-signature-uplaod">
+    <div class="navbar-container">
+    <nav class="navbar">
+      <div class="logo-container">
+        <a routerLink="/pdf-signature">
+          <img class="logo" src="assets/images/pdf-signature/LOGO2.png" alt="Logo">
+        </a>
+        <span>|</span>
+        <span>簽署新文件</span>
+      </div>
+      <div class="link">
+        <ul>
+          <li *ngFor="let link of links">
+            <a routerLink="{{ link.navigate }}" [ngClass]="{'disable': link.disable}">{{ link.name }}</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+  <div class="content">
+
+  </div>
+  <div class="progress">
+
+  </div>
+</div>

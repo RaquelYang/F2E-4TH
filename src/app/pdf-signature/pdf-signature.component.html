@@ -9,7 +9,7 @@
       <div class="link">
         <ul>
           <li *ngFor="let link of links">
-            <a href="{{ link.navigate }}" [ngClass]="{'disable': link.disable}">{{ link.name }}</a>
+            <a routerLink="{{ link.navigate }}" [ngClass]="{'disable': link.disable}">{{ link.name }}</a>
           </li>
         </ul>
       </div>
@@ -18,8 +18,8 @@
 
   <div class="content">
 
-    <img class="block-brown2" src="assets/images/pdf-signature/banner-block-brown2.svg" alt="">
     <img class="block-blue" src="assets/images/pdf-signature/banner-block-blue.png" alt="">
+    <img class="block-brown2" src="assets/images/pdf-signature/banner-block-brown2.svg" alt="">
     <img class="shadow" src="assets/images/pdf-signature/shadow.png" alt="">
     <img class="person" src="assets/images/pdf-signature/banner-person.png" alt="">
     <img class="block-brown" src="assets/images/pdf-signature/banner-block-brown.svg" alt="">
@@ -27,7 +27,7 @@
 
       <img class="signature-logo" src="assets/images/pdf-signature/LOGO1.png" alt="Logo">
       <p>線上簽署，方便快速。</p>
-      <button>簽署新文件</button>
+      <button routerLink="/pdf-signature/upload">簽署新文件</button>
     </div>
 
   </div>
