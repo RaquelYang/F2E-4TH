@@ -18,7 +18,7 @@
           <span>(限3MB以下PDF檔)</span>
         </div>
       </div>
-      <div class="tab tab2" *ngIf="tab === 2">
+      <div class="tab" [ngClass]="{'no-files' : !fileData}" *ngIf="tab === 2">
         <ng-container *ngIf="!fileData"><p>尚未上傳任何文件！</p></ng-container>
         <ng-container *ngIf="fileData">
           <div class="search-container">

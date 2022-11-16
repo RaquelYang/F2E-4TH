@@ -22,24 +22,12 @@ export class TabsComponent implements OnInit {
   uploadFile(event: any) {
     console.log('event', event[0]);
     if (event[0].type !== 'application/pdf') {
-      // 跳出 alert dialog '您的檔案類型不是PDF檔!'
-      this.dialog.open(AlertDialogComponent, {
-        data: '您的檔案類型不是PDF檔!',
-        width: '500px',
-        height: '300px',
-        panelClass: 'alert-dialog'
-      });
+      this.openAlertDialog('您的檔案類型不是PDF檔!');
       return
     }
 
     if (event[0].size > '3000000') {
-      // 跳出 alert dialog '您的檔案太大了!'
-      this.dialog.open(AlertDialogComponent, {
-        data: '您的檔案太大了!',
-        width: '500px',
-        height: '300px',
-        panelClass: 'alert-dialog'
-      });
+      this.openAlertDialog('您的檔案太大了!');
       return
     }
 
@@ -53,10 +41,8 @@ export class TabsComponent implements OnInit {
         PDFtoBase64: base64
       }];
 
-      console.log('data', data);
-
       localStorage.setItem('pdf-signature', JSON.stringify(data));
-
+      this.openAlertDialog('成功上傳PDF!')
     });
   }
 
@@ -66,6 +52,15 @@ export class TabsComponent implements OnInit {
     reader.readAsBinaryString(file);
     reader.onload = (event: any) => result.next(btoa(event.target.result.toString()));
     return result;
+  }
+
+  openAlertDialog(msg: string): void {
+    this.dialog.open(AlertDialogComponent, {
+      data: msg,
+      width: '500px',
+      height: '300px',
+      panelClass: 'alert-dialog'
+    });
   }
 
 }

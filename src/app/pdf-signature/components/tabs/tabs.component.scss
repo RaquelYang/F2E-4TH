@@ -100,9 +100,9 @@
     }
   }
 
-  .tab2 {
-    align-items: flex-start;
-    justify-content: start;
+  .no-files {
+    align-items: center;
+    justify-content: center;
   }
 }
 
@@ -117,6 +117,8 @@ p {
 .search-container {
   width: 100%;
   position: relative;
+  align-items: flex-start;
+  justify-content: start;
 }
 
 .search-input {
