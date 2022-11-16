@@ -9,8 +9,6 @@ import { ReplaySubject } from 'rxjs/internal/ReplaySubject';
 })
 export class TabsComponent implements OnInit {
   tab = 1;
-  base64Output = '';
-
 
   constructor() { }
 
@@ -18,12 +16,31 @@ export class TabsComponent implements OnInit {
   }
 
   uploadFile(event: any) {
-  let payload = new FormData();
-  payload.append('data', event[0]);
-  console.log('event', event);
+    console.log('event', event[0]);
+    if (event[0].type !== 'application/pdf') {
+      // 跳出 alert dialog '您的檔案類型不是PDF檔!'
+      return
+    }
+
+    if (event[0].size > '5000000') {
+      // 跳出 alert dialog '您的檔案太大了!'
+      return
+    }
+
     this.convertPDFtoBase64(event[0]).subscribe(base64 => {
-      this.base64Output = base64;
-      console.log('base64', base64);
+      // 成功轉成 base64, 後續把它存到 localStorage
+
+      const data: FileData[] = [{
+        createDate: new Date(),
+        fileName: event[0].name,
+        lastOpened: '',
+        PDFtoBase64: base64
+      }];
+
+      console.log('data', data);
+
+      localStorage.setItem('pdf-signature', JSON.stringify(data));
+
     });
   }
 
@@ -35,4 +52,11 @@ export class TabsComponent implements OnInit {
     return result;
   }
 
+}
+
+interface FileData {
+  createDate: Date,
+  fileName: string,
+  lastOpened: string,
+  PDFtoBase64: string
 }
