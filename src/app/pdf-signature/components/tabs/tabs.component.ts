@@ -1,6 +1,8 @@
 import { Component, HostListener, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Observable } from 'rxjs/internal/Observable';
 import { ReplaySubject } from 'rxjs/internal/ReplaySubject';
+import { AlertDialogComponent } from '../alert-dialog/alert-dialog.component';
 
 @Component({
   selector: 'app-tabs',
@@ -10,7 +12,7 @@ import { ReplaySubject } from 'rxjs/internal/ReplaySubject';
 export class TabsComponent implements OnInit {
   tab = 1;
 
-  constructor() { }
+  constructor(private dialog: MatDialog,) { }
 
   ngOnInit(): void {
   }
@@ -19,11 +21,23 @@ export class TabsComponent implements OnInit {
     console.log('event', event[0]);
     if (event[0].type !== 'application/pdf') {
       // 跳出 alert dialog '您的檔案類型不是PDF檔!'
+      this.dialog.open(AlertDialogComponent, {
+        data: '您的檔案類型不是PDF檔!',
+        width: '500px',
+        height: '300px',
+        panelClass: 'alert-dialog'
+      });
       return
     }
 
     if (event[0].size > '5000000') {
       // 跳出 alert dialog '您的檔案太大了!'
+      this.dialog.open(AlertDialogComponent, {
+        data: '您的檔案太大了!',
+        width: '500px',
+        height: '300px',
+        panelClass: 'alert-dialog'
+      });
       return
     }
 

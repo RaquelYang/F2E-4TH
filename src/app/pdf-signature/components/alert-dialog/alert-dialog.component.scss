@@ -1,0 +1,17 @@
+@import '../../../content/scss/variable';
+
+.msg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+}
+
+p {
+  letter-spacing: 4px;
+  color: $sign-dark-grey;
+}
+
+.button {
+  text-align: end;
+}

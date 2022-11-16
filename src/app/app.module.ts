@@ -9,6 +9,9 @@ import { PdfSignatureUploadComponent } from './pdf-signature/pdf-signature-uploa
 import { ProgressBarComponent } from './pdf-signature/components/progress-bar/progress-bar.component';
 import { TabsComponent } from './pdf-signature/components/tabs/tabs.component';
 import { UploadDirective } from './directive/upload/upload.directive';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatDialogModule} from '@angular/material/dialog';
+import { AlertDialogComponent } from './pdf-signature/components/alert-dialog/alert-dialog.component';
 
 @NgModule({
   declarations: [
@@ -18,13 +21,18 @@ import { UploadDirective } from './directive/upload/upload.directive';
     PdfSignatureUploadComponent,
     ProgressBarComponent,
     TabsComponent,
-    UploadDirective
+    UploadDirective,
+    AlertDialogComponent,
+
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatDialogModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  // exports: [MatDialogModule]
 })
 export class AppModule { }
