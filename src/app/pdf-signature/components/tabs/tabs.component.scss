@@ -71,6 +71,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    cursor: pointer;
   }
 
   .tab1 {
@@ -88,4 +89,8 @@
       margin: 15px 0;
     }
   }
+}
+
+.uploadFile {
+  display: none;
 }

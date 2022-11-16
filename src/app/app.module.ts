@@ -8,6 +8,7 @@ import { PdfSignatureComponent } from './pdf-signature/pdf-signature.component';
 import { PdfSignatureUploadComponent } from './pdf-signature/pdf-signature-upload/pdf-signature-upload.component';
 import { ProgressBarComponent } from './pdf-signature/components/progress-bar/progress-bar.component';
 import { TabsComponent } from './pdf-signature/components/tabs/tabs.component';
+import { UploadDirective } from './directive/upload/upload.directive';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { TabsComponent } from './pdf-signature/components/tabs/tabs.component';
     PdfSignatureComponent,
     PdfSignatureUploadComponent,
     ProgressBarComponent,
-    TabsComponent
+    TabsComponent,
+    UploadDirective
   ],
   imports: [
     BrowserModule,

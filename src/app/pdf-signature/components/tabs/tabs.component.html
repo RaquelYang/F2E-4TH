@@ -6,7 +6,8 @@
       <div class="" (click)="tab = 2">選擇已上傳文件</div>
     </div>
     <div class="content">
-      <div class="tab tab1" *ngIf="tab === 1">
+      <div id="dragFileContainer" class="tab tab1" *ngIf="tab === 1" (click)="UploadFile.click()" (onFileDropped)="uploadFile($event)" appUpload>
+        <input #UploadFile type="file" accept="application/pdf" class="uploadFile">
         <div>
           <span>點擊此處</span><span class="px-15">或</span><span>直接拖曳檔案</span>
         </div>
