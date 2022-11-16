@@ -21,11 +21,24 @@
       <div class="tab tab2" *ngIf="tab === 2">
         <ng-container *ngIf="!fileData"><p>尚未上傳任何文件！</p></ng-container>
         <ng-container *ngIf="fileData">
-          <div *ngFor="let data of fileData" class="search-container">
+          <div class="search-container">
             <!-- 有 data 的情況下 -->
             <input type="text" placeholder="搜尋文件名稱" class="search-input">
             <mat-icon class="icon c-dark-grey">search</mat-icon>
-
+          </div>
+          <div class="table">
+            <table>
+              <tr>
+                <th width="30%">名稱</th>
+                <th width="50%">上傳時間</th>
+                <th width="20%">上次開啟</th>
+              </tr>
+              <tr class="active" *ngFor="let data of fileData" >
+                <td>{{ data.fileName }}</td>
+                <td>{{ data.createDate }}</td>
+                <td>{{ data.lastOpened || '--' }}</td>
+              </tr>
+            </table>
           </div>
         </ng-container>
 
