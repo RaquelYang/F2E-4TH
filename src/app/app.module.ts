@@ -12,6 +12,7 @@ import { UploadDirective } from './directive/upload/upload.directive';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatDialogModule} from '@angular/material/dialog';
 import { AlertDialogComponent } from './pdf-signature/components/alert-dialog/alert-dialog.component';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { AlertDialogComponent } from './pdf-signature/components/alert-dialog/al
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatDialogModule
+    MatDialogModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent],

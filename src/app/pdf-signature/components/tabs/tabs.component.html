@@ -2,8 +2,8 @@
 <div class="container">
   <div class="wrap">
       <div class="tabs">
-      <div class="active" (click)="tab = 1">上傳新文件</div>
-      <div class="" (click)="tab = 2">選擇已上傳文件</div>
+      <div class="upload-file active" (click)="tab = 1" [ngClass]="{ 'active' : tab === 1 }"><span>上傳新文件</span></div>
+      <div class="uploaded-files" (click)="tab = 2" [ngClass]="{ 'active' : tab === 2 }"><span>選擇已上傳文件</span></div>
     </div>
     <div class="content">
       <div id="dragFileContainer" class="tab tab1" *ngIf="tab === 1" (click)="UploadFile.click()" (onFileDropped)="uploadFile($event)" appUpload>
@@ -15,11 +15,20 @@
           <img src="assets/images/pdf-signature/carbon_document-pdf.png" alt="PDF-icon">
         </div>
         <div>
-          <span>(限5MB以下PDF檔)</span>
+          <span>(限3MB以下PDF檔)</span>
         </div>
       </div>
-      <div class="tab" *ngIf="tab === 2">
-        content2
+      <div class="tab tab2" *ngIf="tab === 2">
+        <ng-container *ngIf="!fileData"><p>尚未上傳任何文件！</p></ng-container>
+        <ng-container *ngIf="fileData">
+          <div *ngFor="let data of fileData" class="search-container">
+            <!-- 有 data 的情況下 -->
+            <input type="text" placeholder="搜尋文件名稱" class="search-input">
+            <mat-icon class="icon c-dark-grey">search</mat-icon>
+
+          </div>
+        </ng-container>
+
       </div>
     </div>
   </div>

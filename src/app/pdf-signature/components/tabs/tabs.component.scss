@@ -24,6 +24,7 @@
   height: 77px;
   background-color: $sign-light-main;
   font-size: $headline2;
+
   @media #{$table} {
     height: 50px;
   }
@@ -32,9 +33,18 @@
     background-color: $white;
     color: $sign-primary;
     border-radius: 35px 35px 0 0;
-    box-shadow: 10px 0px 5px -2px rgba(238, 237, 232, 0.5);
     z-index: 1;
+    span {
+      transition: .2s;
+    }
+  }
 
+  .upload-file.active {
+    box-shadow: 10px 0px 5px -2px rgba(238, 237, 232, 0.5);
+  }
+
+  .uploaded-files.active {
+    box-shadow: -10px 0px 5px -2px rgba(238, 237, 232, 0.5);
   }
 
   div {
@@ -42,7 +52,7 @@
     text-align: center;
     line-height: 77px;
     cursor: pointer;
-    letter-spacing: 4px;
+
     background-color: $sign-light-main;
     color: $sign-secondary;
     @media #{$table} {
@@ -80,7 +90,6 @@
 
     span {
       color: $sign-dark-grey;
-      letter-spacing: 4px;
       font-size: 24px;
     }
 
@@ -89,8 +98,49 @@
       margin: 15px 0;
     }
   }
+
+  .tab2 {
+    align-items: flex-start;
+    justify-content: start;
+  }
 }
 
 .uploadFile {
   display: none;
+}
+
+p {
+  color: $sign-dark-grey;
+}
+
+.search-container {
+  width: 100%;
+  position: relative;
+}
+
+.search-input {
+  width: 100%;
+  padding: 18px 30px;
+  border-radius: 30px;
+  height: 50px;
+  line-height: 50px;
+  font-size: $headline2;
+  border: 1px solid $sign-dark-grey;
+  color: #555;
+
+  &::placeholder {
+    color: $sign-dark-grey;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.icon {
+  font-size: 40px;
+  position: absolute;
+  right: 30px;
+  top: 6px;
+  cursor: initial;
 }

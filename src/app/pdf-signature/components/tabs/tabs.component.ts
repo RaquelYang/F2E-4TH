@@ -1,4 +1,4 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, HostListener, Input, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Observable } from 'rxjs/internal/Observable';
 import { ReplaySubject } from 'rxjs/internal/ReplaySubject';
@@ -10,6 +10,8 @@ import { AlertDialogComponent } from '../alert-dialog/alert-dialog.component';
   styleUrls: ['./tabs.component.scss']
 })
 export class TabsComponent implements OnInit {
+  @Input() fileData?: FileData[];
+
   tab = 1;
 
   constructor(private dialog: MatDialog,) { }
@@ -30,7 +32,7 @@ export class TabsComponent implements OnInit {
       return
     }
 
-    if (event[0].size > '5000000') {
+    if (event[0].size > '3000000') {
       // 跳出 alert dialog '您的檔案太大了!'
       this.dialog.open(AlertDialogComponent, {
         data: '您的檔案太大了!',
@@ -68,7 +70,7 @@ export class TabsComponent implements OnInit {
 
 }
 
-interface FileData {
+export interface FileData {
   createDate: Date,
   fileName: string,
   lastOpened: string,
