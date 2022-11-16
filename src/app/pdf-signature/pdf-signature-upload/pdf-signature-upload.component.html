@@ -22,6 +22,12 @@
     <app-tabs [fileData]="fileData"></app-tabs>
   </div>
   <div class="progress">
-    <app-progress-bar></app-progress-bar>
+    <div class="process-container">
+      <app-progress-bar></app-progress-bar>
+      <div class="btn-group">
+        <button class="btn btn-secondary">取消</button>
+        <button class="btn btn-primary">開啟文件</button>
+      </div>
+    </div>
   </div>
 </div>

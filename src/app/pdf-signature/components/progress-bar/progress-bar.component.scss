@@ -2,20 +2,14 @@
 
 .progress-bar {
   height: 100px;
-  background-color: $sign-light-main;
 }
 
 .container {
   display: flex;
   justify-content: space-between;
   margin: auto;
-
-  max-width: 1440px;
   height: 100%;
 
-  @media #{$table} {
-    width: 1000px;
-  }
 }
 
 .text {
@@ -32,10 +26,10 @@
     position: absolute;
     background-color: $white;
     box-shadow: 0px 4px 4px $sign-mid-grey;
-    width: 362px;
+    width: 337px;
     height: 10px;
     top: 55px;
-    left: 18px;
+    left: 30px;
   }
 
   div {
