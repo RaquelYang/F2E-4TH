@@ -29,18 +29,20 @@
           <div class="table">
             <table>
               <tr>
-                <th width="30%">名稱</th>
-                <th width="50%">上傳時間</th>
-                <th width="20%">上次開啟</th>
+                <th width="40%">名稱</th>
+                <th width="30%">上傳時間</th>
+                <th width="30%">上次開啟</th>
               </tr>
               <tr
                 *ngFor="let data of fileData; let idx = index"
-                [ngClass]="{'active' : selected === idx}"
-                (click)="selected = idx"
+                [ngClass]="{'active' : selectedFileIndex === idx}"
+                (click)="selectFile(idx, data)"
               >
                 <td>{{ data.fileName }}</td>
                 <td>{{ data.createDate | date : 'yy/M/d h:mm: a' }}</td>
-                <td>{{ data.lastOpened || '--' }}</td>
+
+                <td *ngIf="data.lastOpened">{{ data.lastOpened | date : 'yy/M/d h:mm: a'}}</td>
+                <td *ngIf="!data.lastOpened">--</td>
               </tr>
             </table>
           </div>

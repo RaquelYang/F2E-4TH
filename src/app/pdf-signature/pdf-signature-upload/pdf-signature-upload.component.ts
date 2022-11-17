@@ -7,7 +7,9 @@ import { FileData } from '../components/tabs/tabs.component';
   styleUrls: ['./pdf-signature-upload.component.scss']
 })
 export class PdfSignatureUploadComponent implements OnInit {
-  tab!: number;
+  tab = 1;
+  file!: FileData;
+  fileData!: FileData[];
   links = [
     { name: '邀請他人簽署', navigate: '', disable: true },
     { name: '登入', navigate: 'login', disable: false },
@@ -15,12 +17,30 @@ export class PdfSignatureUploadComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-
+    if (!localStorage.getItem('pdf-signature')) {
+      return
+    }
+    this.fileData = JSON.parse(localStorage.getItem('pdf-signature') as string);
   }
 
-  tabValue(val: any): void {
+  tabValue(val: number): void {
     this.tab = val;
-    console.log('this.tab', this.tab);
+  }
+
+  selectedFile(file: FileData): void {
+    this.file = file;
+  }
+
+  openFile(){;
+    const idx = this.fileData.findIndex(data => {
+      return data.createDate === this.file.createDate
+    });
+
+    this.fileData[idx].lastOpened = new Date();
+    this.file.lastOpened = new Date();
+
+    localStorage.setItem('pdf-signature', JSON.stringify(this.fileData));
+    localStorage.setItem('pdf-signature-selected-file', JSON.stringify(this.file));
   }
 
 }

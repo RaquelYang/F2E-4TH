@@ -11,8 +11,9 @@ import { AlertDialogComponent } from '../alert-dialog/alert-dialog.component';
 })
 export class TabsComponent implements OnInit {
   @Output() tabValue: EventEmitter<number> = new EventEmitter();
-  fileData!: FileData[];
-  selected = 0;
+  @Output() selectedFile: EventEmitter<FileData> = new EventEmitter();
+  fileData: FileData[] = [];
+  selectedFileIndex!: number;
   tab = 1;
 
   constructor(private dialog: MatDialog,) { }
@@ -23,15 +24,17 @@ export class TabsComponent implements OnInit {
     }
     this.fileData = JSON.parse(localStorage.getItem('pdf-signature') as string);
 
-    if (this.fileData) {
-      console.log('this.fileData', this.fileData);
-      console.log('this.fileData', this.fileData[0].fileName);
-    }
+    this.selectFile(0, this.fileData[0]);
   }
 
   tabChange(val: number): void {
     this.tab = val;
     this.tabValue.emit(this.tab);
+  }
+
+  selectFile(idx: number, file: FileData): void {
+    this.selectedFileIndex = idx;
+    this.selectedFile.emit(file);
   }
 
   uploadFile(event: any) {
@@ -57,6 +60,7 @@ export class TabsComponent implements OnInit {
       this.fileData.push(data);
 
       localStorage.setItem('pdf-signature', JSON.stringify(this.fileData));
+
       this.openAlertDialog('成功上傳PDF!')
     });
   }
@@ -83,6 +87,6 @@ export class TabsComponent implements OnInit {
 export interface FileData {
   createDate: Date,
   fileName: string,
-  lastOpened: string,
+  lastOpened: Date | string,
   PDFtoBase64: string
 }
