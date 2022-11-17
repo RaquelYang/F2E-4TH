@@ -1,5 +1,11 @@
 @for $size from 1 through 30 {
   .px-#{$size} {
-    padding: 0 $size * 1px;
+    padding: $size * 1px 0;
+  }
+}
+
+@for $size from 1 through 30 {
+  .mx-#{$size} {
+    margin: $size * 1px 0;
   }
 }
