@@ -19,14 +19,14 @@
     </div>
 
   <div class="content">
-    <app-tabs [fileData]="fileData"></app-tabs>
+    <app-tabs (tabValue)="tabValue($event)"></app-tabs>
   </div>
   <div class="progress">
     <div class="process-container">
       <app-progress-bar></app-progress-bar>
       <div class="btn-group">
         <button class="btn btn-secondary">取消</button>
-        <button class="btn btn-primary">開啟文件</button>
+        <button class="btn btn-primary" [disabled]="tab === 1">開啟文件</button>
       </div>
     </div>
   </div>

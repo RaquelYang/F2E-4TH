@@ -2,8 +2,8 @@
 <div class="container">
   <div class="wrap">
       <div class="tabs">
-      <div class="upload-file active" (click)="tab = 1" [ngClass]="{ 'active' : tab === 1 }"><span>上傳新文件</span></div>
-      <div class="uploaded-files" (click)="tab = 2" [ngClass]="{ 'active' : tab === 2 }"><span>選擇已上傳文件</span></div>
+      <div class="upload-file active" (click)="tabChange(1)" [ngClass]="{ 'active' : tab === 1 }"><span>上傳新文件</span></div>
+      <div class="uploaded-files" (click)="tabChange(2)" [ngClass]="{ 'active' : tab === 2 }"><span>選擇已上傳文件</span></div>
     </div>
     <div class="content">
       <div id="dragFileContainer" class="tab tab1" *ngIf="tab === 1" (click)="UploadFile.click()" (onFileDropped)="uploadFile($event)" appUpload>
@@ -33,9 +33,13 @@
                 <th width="50%">上傳時間</th>
                 <th width="20%">上次開啟</th>
               </tr>
-              <tr class="active" *ngFor="let data of fileData" >
+              <tr
+                *ngFor="let data of fileData; let idx = index"
+                [ngClass]="{'active' : selected === idx}"
+                (click)="selected = idx"
+              >
                 <td>{{ data.fileName }}</td>
-                <td>{{ data.createDate }}</td>
+                <td>{{ data.createDate | date : 'yy/M/d h:mm: a' }}</td>
                 <td>{{ data.lastOpened || '--' }}</td>
               </tr>
             </table>

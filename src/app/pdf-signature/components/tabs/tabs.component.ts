@@ -1,4 +1,4 @@
-import { Component, HostListener, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, HostListener, Input, OnInit, Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Observable } from 'rxjs/internal/Observable';
 import { ReplaySubject } from 'rxjs/internal/ReplaySubject';
@@ -10,13 +10,28 @@ import { AlertDialogComponent } from '../alert-dialog/alert-dialog.component';
   styleUrls: ['./tabs.component.scss']
 })
 export class TabsComponent implements OnInit {
-  @Input() fileData?: FileData[];
-
+  @Output() tabValue: EventEmitter<number> = new EventEmitter();
+  fileData!: FileData[];
+  selected = 0;
   tab = 1;
 
   constructor(private dialog: MatDialog,) { }
 
   ngOnInit(): void {
+    if (!localStorage.getItem('pdf-signature')) {
+      return
+    }
+    this.fileData = JSON.parse(localStorage.getItem('pdf-signature') as string);
+
+    if (this.fileData) {
+      console.log('this.fileData', this.fileData);
+      console.log('this.fileData', this.fileData[0].fileName);
+    }
+  }
+
+  tabChange(val: number): void {
+    this.tab = val;
+    this.tabValue.emit(this.tab);
   }
 
   uploadFile(event: any) {
@@ -32,16 +47,16 @@ export class TabsComponent implements OnInit {
     }
 
     this.convertPDFtoBase64(event[0]).subscribe(base64 => {
-      // 成功轉成 base64, 後續把它存到 localStorage
-
-      const data: FileData[] = [{
+      const data: FileData = {
         createDate: new Date(),
         fileName: event[0].name,
         lastOpened: '',
         PDFtoBase64: base64
-      }];
+      };
 
-      localStorage.setItem('pdf-signature', JSON.stringify(data));
+      this.fileData.push(data);
+
+      localStorage.setItem('pdf-signature', JSON.stringify(this.fileData));
       this.openAlertDialog('成功上傳PDF!')
     });
   }
