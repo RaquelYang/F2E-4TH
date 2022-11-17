@@ -15,7 +15,22 @@
   background-color: $sign-secondary;
 }
 
+.btn-primary:disabled {
+  background-color: $sign-mid-grey;
+  pointer-events: none;
+}
+
+.btn-primary:hover {
+  transition: .3s;
+  background-color: $sign-primary;
+}
+
 .btn-secondary {
   color: $sign-secondary;
   background-color: $white;
+}
+
+.btn-secondary:hover {
+  color: $sign-primary;
+  transition: .3s;
 }
