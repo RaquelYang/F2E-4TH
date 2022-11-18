@@ -7,7 +7,7 @@
     </div>
     <div class="content">
       <div id="dragFileContainer" class="tab tab1" *ngIf="tab === 1" (click)="UploadFile.click()" (onFileDropped)="uploadFile($event)" appUpload>
-        <input #UploadFile type="file" accept="application/pdf" class="uploadFile">
+        <input #UploadFile type="file" accept="application/pdf" class="uploadFile" (change)="uploadFileByInput($event)">
         <div>
           <span>點擊此處</span><span class="px-15">或</span><span>直接拖曳檔案</span>
         </div>
@@ -18,9 +18,9 @@
           <span>(限3MB以下PDF檔)</span>
         </div>
       </div>
-      <div class="tab" [ngClass]="{'no-files' : !fileData}" *ngIf="tab === 2">
-        <ng-container *ngIf="!fileData"><p>尚未上傳任何文件！</p></ng-container>
-        <ng-container *ngIf="fileData">
+      <div class="tab" [ngClass]="{'no-files' : !fileData.length }" *ngIf="tab === 2">
+        <ng-container *ngIf="!fileData.length"><p>尚未上傳任何文件！</p></ng-container>
+        <ng-container *ngIf="fileData.length">
           <div class="search-container">
             <!-- 有 data 的情況下 -->
             <input type="text" placeholder="搜尋文件名稱" class="search-input">

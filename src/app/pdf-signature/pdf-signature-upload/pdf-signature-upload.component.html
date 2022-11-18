@@ -19,16 +19,19 @@
     </div>
 
   <div class="content">
-    <app-tabs (tabValue)="tabValue($event)" (selectedFile)="selectedFile($event)"></app-tabs>
+    <app-tabs
+      (tabValue)="tabValue($event)"
+      (selectedFile)="selectedFile($event)"
+    ></app-tabs>
   </div>
   <div class="progress">
     <div class="process-container">
-      <app-progress-bar></app-progress-bar>
+      <app-progress-bar [step]="'STEP1'"></app-progress-bar>
       <div class="btn-group">
         <button class="btn btn-secondary">取消</button>
         <button
           class="btn btn-primary"
-          [disabled]="tab === 1"
+          [disabled]="tab === 1 || !fileData"
           (click)="openFile()"
           routerLink="/pdf-signature/open-file"
         >開啟文件</button>

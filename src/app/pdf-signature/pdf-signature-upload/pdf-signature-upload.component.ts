@@ -31,7 +31,7 @@ export class PdfSignatureUploadComponent implements OnInit {
     this.file = file;
   }
 
-  openFile(){;
+  openFile(){
     const idx = this.fileData.findIndex(data => {
       return data.createDate === this.file.createDate
     });

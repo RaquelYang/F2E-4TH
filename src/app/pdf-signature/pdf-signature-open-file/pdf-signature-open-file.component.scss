@@ -1,0 +1,95 @@
+@import '../../content/scss/variable';
+
+.pdf-signature-upload {
+  background-color: $sign-mid-grey;
+}
+
+.navbar-container {
+  background-color: $sign-light-main;
+}
+
+.navbar, .content{
+  max-width: 1440px;
+  @media #{$table} {
+    width: 1000px;
+  }
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  padding: 20px 0;
+  align-items: center;
+
+  .logo-container {
+    display: flex;
+    align-items: center;
+  }
+
+  span {
+    padding: 0 20px;
+    font-size: $headline1;
+  }
+
+  span:nth-child(3) {
+    font-size: $headline3;
+    letter-spacing: 5px;
+    padding: 0;
+  }
+}
+
+.logo {
+  width: 100px;
+}
+
+.link ul{
+  display: flex;
+  li {
+    padding: 0 10px;
+  }
+}
+
+.disable {
+  color: $sign-dark-grey;
+  pointer-events: none;
+  cursor: default;
+}
+
+li{
+  list-style: none;
+}
+
+a {
+  color: $sign-secondary;
+  text-decoration: none;
+}
+
+.content {
+  height: calc(100vh - 170px);
+  margin: auto;
+}
+
+.progress {
+  display: flex;
+  width: 100%;
+  background-color: $sign-light-main;
+
+  .process-container {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1440px;
+
+    @media #{$table} {
+      max-width: 1000px;
+    }
+  }
+}
+
+.btn-group {
+  button:first-child {
+    margin-right: 15px;
+  }
+}

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, HostListener, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, HostListener, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Observable } from 'rxjs/internal/Observable';
 import { ReplaySubject } from 'rxjs/internal/ReplaySubject';
@@ -37,8 +37,8 @@ export class TabsComponent implements OnInit {
     this.selectedFile.emit(file);
   }
 
-  uploadFile(event: any) {
-    console.log('event', event[0]);
+  uploadFile(event: any): void {
+    console.log('event', event);
     if (event[0].type !== 'application/pdf') {
       this.openAlertDialog('您的檔案類型不是PDF檔!');
       return
@@ -61,7 +61,36 @@ export class TabsComponent implements OnInit {
 
       localStorage.setItem('pdf-signature', JSON.stringify(this.fileData));
 
-      this.openAlertDialog('成功上傳PDF!')
+      this.openAlertDialog('成功上傳PDF!');
+    });
+  }
+
+  uploadFileByInput(event: any): void {
+    const file = event.target.files[0];
+
+    if (file.type !== 'application/pdf') {
+      this.openAlertDialog('您的檔案類型不是PDF檔!');
+      return
+    }
+
+    if (file.size > '3000000') {
+      this.openAlertDialog('您的檔案太大了!');
+      return
+    }
+
+    this.convertPDFtoBase64(file).subscribe(base64 => {
+      const data: FileData = {
+        createDate: new Date(),
+        fileName: file.name,
+        lastOpened: '',
+        PDFtoBase64: base64
+      };
+
+      this.fileData.push(data);
+
+      localStorage.setItem('pdf-signature', JSON.stringify(this.fileData));
+
+      this.openAlertDialog('成功上傳PDF!');
     });
   }
 

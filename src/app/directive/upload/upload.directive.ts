@@ -9,8 +9,6 @@ export class UploadDirective {
   @HostBinding('style.background-color') public background = '#fff';
   @HostBinding('style.transition') public transition = '.3s';
 
-
-
   @HostListener('dragover', ['$event']) onDragOver(evt: any) {
     evt.preventDefault();
     evt.stopPropagation();
