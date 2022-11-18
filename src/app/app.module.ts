@@ -13,6 +13,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatDialogModule} from '@angular/material/dialog';
 import { AlertDialogComponent } from './pdf-signature/components/alert-dialog/alert-dialog.component';
 import {MatIconModule} from '@angular/material/icon';
+import { PdfSignatureOpenFileComponent } from './pdf-signature/pdf-signature-open-file/pdf-signature-open-file.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import {MatIconModule} from '@angular/material/icon';
     TabsComponent,
     UploadDirective,
     AlertDialogComponent,
+    PdfSignatureOpenFileComponent,
 
   ],
   imports: [
