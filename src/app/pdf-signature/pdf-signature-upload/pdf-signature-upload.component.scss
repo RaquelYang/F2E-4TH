@@ -89,7 +89,7 @@ a {
 }
 
 .btn-group {
-  button {
-    margin: 0px 15px;
+  button:first-child {
+    margin-right: 15px;
   }
 }
