@@ -14,6 +14,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { AlertDialogComponent } from './pdf-signature/components/alert-dialog/alert-dialog.component';
 import {MatIconModule} from '@angular/material/icon';
 import { PdfSignatureOpenFileComponent } from './pdf-signature/pdf-signature-open-file/pdf-signature-open-file.component';
+import { SidebarComponent } from './pdf-signature/components/sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { PdfSignatureOpenFileComponent } from './pdf-signature/pdf-signature-ope
     UploadDirective,
     AlertDialogComponent,
     PdfSignatureOpenFileComponent,
+    SidebarComponent,
 
   ],
   imports: [
