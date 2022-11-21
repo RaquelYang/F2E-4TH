@@ -15,5 +15,5 @@
 
 ### 使用技術
 - Angular
-- material - dialog
+- material
 - angular-cli-ghpages
